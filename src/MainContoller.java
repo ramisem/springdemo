@@ -30,12 +30,12 @@ public class MainContoller {
 //        triangle.drawFromList();
 //        triangle.drawFromMap();
 
-//        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
-//        TriangleWithConstructorWiring triangle=(TriangleWithConstructorWiring) context.getBean("trianglewithconstructorwiring");
-//        triangle.draw();
+        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
+        TriangleWithConstructorWiring triangle=(TriangleWithConstructorWiring) context.getBean("trianglewithconstructorwiring");
+        triangle.draw();
 
-        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
-        DemoOfAwareInterfaces triangle=(DemoOfAwareInterfaces) context.getBean("demoofawareinterfaces");
+//        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
+//        DemoOfAwareInterfaces triangle=(DemoOfAwareInterfaces) context.getBean("demoofawareinterfaces");
 //        triangle.draw();
     }
 
