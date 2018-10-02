@@ -10,4 +10,5 @@
     </bean>
     <bean id="demoofawareinterfaces" class="DemoOfAwareInterfaces" ></bean>
 
+
 </beans>

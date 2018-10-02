@@ -68,5 +68,6 @@
     </bean>
 
     <bean id="trianglewithconstructorwiring" class="com.springdemo.shapes.TriangleWithConstructorWiring" autowire="constructor"></bean>
+    <bean  class="com.springdemo.shapes.beanpostprocessor.CustomBeanProcessor"></bean>
 
 </beans>

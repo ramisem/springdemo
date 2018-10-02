@@ -5,6 +5,6 @@ import org.springframework.context.ApplicationContextAware;
 public class DemoOfAwareInterfaces implements ApplicationContextAware {
     @Override
     public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
-        System.out.println(applicationContext.getStartupDate());
+        System.out.println("DemoOfAwareInterfaces: "+applicationContext.getStartupDate());
     }
 }

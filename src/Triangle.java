@@ -11,6 +11,7 @@ public class Triangle {
 
         this.type = type;
         this.height=height;
+        System.out.println("Triangle consturtor called.");
     }
 
     public int getHeight() {
