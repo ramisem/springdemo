@@ -1,3 +1,3 @@
 public class MainController {
-    public static void main(){}
+    public static void main(String as[]){}
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pointA" class="com.springdemo.shapes.points.TwoDimensionalPoint">
+        <property name="x" value="0"></property>
+        <property name="y" value="0"></property>
+    </bean>
+
+    <bean id="pointB" class="com.springdemo.shapes.points.TwoDimensionalPoint">
+        <property name="x" value="20"></property>
+        <property name="y" value="0"></property>
+    </bean>
+
+    <bean id="pointC" class="com.springdemo.shapes.points.TwoDimensionalPoint">
+        <property name="x" value="0"></property>
+        <property name="y" value="20"></property>
+    </bean>
+
+    <bean id="triangledefinedbypoints" class="com.springdemo.shapes.TriangleDefinedByPoints">
+        <property name="pointA" ref="pointA"></property>
+        <property name="pointB" ref="pointB"></property>
+        <property name="pointC" ref="pointC"></property>
+    </bean>
+
+    <bean id="triangledefinedbypointslist" class="com.springdemo.shapes.TriangleDefinedByPointsList">
+        <property name="points">
+            <list>
+                <ref bean="pointA"></ref>
+                <ref bean="pointB"></ref>
+                <ref bean="pointC"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="triangledefinedbypointscollection" class="com.springdemo.shapes.TriangleDefinedByPointsCollection">
+        <property name="pointsList">
+            <list>
+                <ref bean="pointA"></ref>
+                <value type="java.lang.String">(2,2)</value>
+                <bean class="com.springdemo.shapes.points.TwoDimensionalPoint">
+                    <property name="x" value="3"></property>
+                    <property name="y" value="3"></property>
+                </bean>
+            </list>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="name">Eqilatteal</prop>
+                <prop key="desc">Demo Eqilatteal Triangle</prop>
+            </props>
+        </property>
+
+        <property name="pointsMap">
+            <map>
+                <entry key="pointByref" value-ref="pointA"></entry>
+                <entry key="pointByString" value="(2,2)"></entry>
+                <entry key="pointByBean" >
+                    <bean class="com.springdemo.shapes.points.TwoDimensionalPoint">
+                        <property name="x" value="3"></property>
+                        <property name="y" value="3"></property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="trianglewithconstructorwiring" class="com.springdemo.shapes.TriangleWithConstructorWiring" autowire="constructor"></bean>
+
+</beans>
