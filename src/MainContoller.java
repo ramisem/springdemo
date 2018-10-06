@@ -13,13 +13,13 @@ public class MainContoller {
 //        BeanFactory factory=new XmlBeanFactory(new FileSystemResource("E:\\SpringDemo\\src\\Spring.xml"));
 //        Triangle triangle=(Triangle) factory.getBean("triangle");
 
-//        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
-//        Triangle triangle=(Triangle) context.getBean("triangle");
+        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
+        Triangle triangle=(Triangle) context.getBean("triangle");
 //        triangle.draw();
 
-        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
-        TriangleDefinedByPoints triangle=(TriangleDefinedByPoints) context.getBean("triangledefinedbypoints");
-        triangle.draw();
+//        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
+//        TriangleDefinedByPoints triangle=(TriangleDefinedByPoints) context.getBean("triangledefinedbypoints");
+//        triangle.draw();
 
 //        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
 //        TriangleDefinedByPointsList triangle=(TriangleDefinedByPointsList) context.getBean("triangledefinedbypointslist");
