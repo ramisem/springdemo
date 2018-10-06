@@ -27,7 +27,7 @@ public class Triangle {
 //        this.type = type;
 //    }
 
-    public void draw( ){
-        System.out.println(this.getType()+" Triangle of height "+this.getHeight()+" Drawn.. " );
-    }
+//    public void draw( ){
+//        System.out.println(this.getType()+" Triangle of height "+this.getHeight()+" Drawn.. " );
+//    }
 }
