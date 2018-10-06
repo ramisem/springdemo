@@ -67,8 +67,9 @@
         </property>
     </bean>
 
-    <bean id="trianglewithconstructorwiring" class="com.springdemo.shapes.TriangleWithConstructorWiring" autowire="constructor"></bean>
-    <bean  class="com.springdemo.shapes.beanpostprocessor.CustomBeanProcessor"></bean>
-    <bean class="com.springdemo.shapes.factorypostprocessor.CustomFactoryPostProcessor"></bean>
+    <!--<bean id="trianglewithconstructorwiring" class="com.springdemo.shapes.TriangleWithConstructorWiring" autowire="constructor"></bean>-->
+    <!--<bean  class="com.springdemo.shapes.beanpostprocessor.CustomBeanProcessor"></bean>-->
+    <!--<bean class="com.springdemo.shapes.factorypostprocessor.CustomFactoryPostProcessor"></bean>-->
+    <bean class="com.springdemo.shapes.beanpostprocessor.CustomInstantiationAwrBnProcessorAdaptor"></bean>
 
 </beans>
