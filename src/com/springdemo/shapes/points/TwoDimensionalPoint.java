@@ -4,6 +4,10 @@ public class TwoDimensionalPoint {
     private int x;
     private int y;
 
+    public TwoDimensionalPoint(){
+        System.out.println("TwoDimensionalPoint constructor gets called");
+    }
+
     public int getX() {
         return x;
     }
