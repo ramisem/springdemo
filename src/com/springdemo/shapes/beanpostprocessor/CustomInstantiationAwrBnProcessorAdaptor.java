@@ -1,5 +1,6 @@
 package com.springdemo.shapes.beanpostprocessor;
 
+import com.springdemo.shapes.points.TwoDimensionalPoint;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
@@ -11,6 +12,7 @@ public class CustomInstantiationAwrBnProcessorAdaptor implements InstantiationAw
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         System.out.println("1");
+        System.out.println(beanClass.getName());
 //        System.out.println("CustomInstantiationAwrBnProcessorAdaptor.postProcessBeforeInstantiation");
         return beanClass;
     }
@@ -18,7 +20,7 @@ public class CustomInstantiationAwrBnProcessorAdaptor implements InstantiationAw
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         System.out.println("2");
-        if(bean!=null) {
+        if (bean != null) {
 //            System.out.println("CustomInstantiationAwrBnProcessorAdaptor.postProcessAfterInstantiation returns true");
             return true;
         }
@@ -43,6 +45,9 @@ public class CustomInstantiationAwrBnProcessorAdaptor implements InstantiationAw
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("5");
+        System.out.println(bean.getClass().getName());
+        if (bean instanceof Class)
+            return null;
         return bean;
     }
 }
