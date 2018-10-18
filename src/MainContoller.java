@@ -1,7 +1,9 @@
+import com.springdemo.events.publisher.CustomEventPublisher;
 import com.springdemo.shapes.TriangleDefinedByPoints;
 import com.springdemo.shapes.TriangleDefinedByPointsCollection;
 import com.springdemo.shapes.TriangleDefinedByPointsList;
 import com.springdemo.shapes.TriangleWithConstructorWiring;
+import com.springdemo.shapes.points.TwoDimensionalPoint;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -13,8 +15,12 @@ public class MainContoller {
 //        BeanFactory factory=new XmlBeanFactory(new FileSystemResource("E:\\SpringDemo\\src\\Spring.xml"));
 //        Triangle triangle=(Triangle) factory.getBean("triangle");
 
-        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
-        Triangle triangle=(Triangle) context.getBean("triangle");
+//        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
+//        TwoDimensionalPoint pointA=(TwoDimensionalPoint) context.getBean("pointA");
+//        System.out.println(pointA.getX());
+
+//        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
+//        Triangle triangle=(Triangle) context.getBean("triangle");
 //        triangle.draw();
 
 //        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/shapes/ShapesBeanFactoryDef.xml");
@@ -37,6 +43,10 @@ public class MainContoller {
 //        ApplicationContext context= new ClassPathXmlApplicationContext("Spring.xml");
 //        DemoOfAwareInterfaces triangle=(DemoOfAwareInterfaces) context.getBean("demoofawareinterfaces");
 //        triangle.draw();
+
+        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/events/SpringEventConfig.xml");
+        CustomEventPublisher customeventpublisher=(CustomEventPublisher) context.getBean("customeventpublisher");
+        customeventpublisher.publishCustomEvent();
     }
 
 }
