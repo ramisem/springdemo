@@ -1,4 +1,6 @@
+import com.springdemo.aop.bean.Student;
 import com.springdemo.events.publisher.CustomEventPublisher;
+import com.springdemo.oobannotations.AnnotaionsBean;
 import com.springdemo.shapes.TriangleDefinedByPoints;
 import com.springdemo.shapes.TriangleDefinedByPointsCollection;
 import com.springdemo.shapes.TriangleDefinedByPointsList;
@@ -44,9 +46,18 @@ public class MainContoller {
 //        DemoOfAwareInterfaces triangle=(DemoOfAwareInterfaces) context.getBean("demoofawareinterfaces");
 //        triangle.draw();
 
-        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/events/SpringEventConfig.xml");
-        CustomEventPublisher customeventpublisher=(CustomEventPublisher) context.getBean("customeventpublisher");
-        customeventpublisher.publishCustomEvent();
+//        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/events/SpringEventConfig.xml");
+//        CustomEventPublisher customeventpublisher=(CustomEventPublisher) context.getBean("customeventpublisher");
+//        customeventpublisher.publishCustomEvent();
+
+//        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/oobannotations/AnnotationExmp.xml");
+//        AnnotaionsBean annotaionsBean=(AnnotaionsBean) context.getBean("annotationsbean");
+//        annotaionsBean.spellCheck();
+
+        ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/aop/aopconfig.xml");
+        Student student=(Student) context.getBean("student");
+        student.getAge();
+        student.getName();
     }
 
 }
