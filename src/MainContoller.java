@@ -1,3 +1,4 @@
+import com.springdemo.aop.aopinterface.MarksCalc;
 import com.springdemo.aop.bean.Student;
 import com.springdemo.events.publisher.CustomEventPublisher;
 import com.springdemo.oobannotations.AnnotaionsBean;
@@ -55,9 +56,11 @@ public class MainContoller {
 //        annotaionsBean.spellCheck();
 
         ApplicationContext context= new ClassPathXmlApplicationContext("com/springdemo/aop/aopconfig.xml");
-        Student student=(Student) context.getBean("student");
-        student.getAge();
-        student.getName();
+//        Student student=(Student) context.getBean("student");
+//        student.getAge();
+//        student.getName();
+        MarksCalc marksCalc=(MarksCalc) context.getBean("student");
+        marksCalc.calcMarks();
     }
 
 }

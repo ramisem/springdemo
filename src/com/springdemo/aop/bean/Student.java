@@ -1,6 +1,8 @@
 package com.springdemo.aop.bean;
 
-public class Student {
+import com.springdemo.aop.aopinterface.MarksCalc;
+
+public class Student implements MarksCalc {
     private Integer age;
     private String name;
 
@@ -21,5 +23,10 @@ public class Student {
     public void printThrowException(){
         System.out.println("Exception raised");
         throw new IllegalArgumentException();
+    }
+
+    @Override
+    public void calcMarks() {
+        System.out.println("Marks is getting calclated..");
     }
 }

@@ -20,13 +20,21 @@ public class Logging {
     @Pointcut("execution(public String com.springdemo.aop.bean.Student.getName())")
     private void beforeGetName(){}
 
+    @Pointcut("within(com.springdemo.aop.bean.*)")
+    private void withInPointCutDemo(){}
+
     /**
      * This is the method which I would like to execute
      * before a selected method execution.
      */
-    @Before("selectAll()")
+    @Before("beforeGetName()")
     public void beforeAdvice(){
-        System.out.println("Going to setup student profile.");
+        System.out.println("Calling the method beforeAdvice....");
+    }
+
+    @Before("withInPointCutDemo()")
+    public void beforeAdviceByWithInPointCut(){
+        System.out.println("Calling the method beforeAdviceByWithInPointCut....");
     }
 
 //    /**
