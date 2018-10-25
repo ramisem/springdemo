@@ -37,6 +37,11 @@ public class Logging {
         System.out.println("Calling the method beforeAdviceByWithInPointCut....");
     }
 
+    @Before("@annotation(com.springdemo.aop.annotation.MethodPointCutAnnotation)")
+    public void beforeAdviceByAnnotationPointCut(){
+        System.out.println("Calling the method beforeAdviceByAnnotationPointCut....");
+    }
+
 //    /**
 //     * This is the method which I would like to execute
 //     * after a selected method execution.

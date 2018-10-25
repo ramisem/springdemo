@@ -61,6 +61,7 @@ public class MainContoller {
 //        student.getName();
         MarksCalc marksCalc=(MarksCalc) context.getBean("student");
         marksCalc.calcMarks();
+        marksCalc.annotatedMethod();
     }
 
 }
